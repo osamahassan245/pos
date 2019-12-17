@@ -1,0 +1,52 @@
+{
+    "name": "WEBSERVICE",
+    "fields": [
+        {
+            "fieldName": "gID",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "cPT",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "wSNAM",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dESCRIPTION",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "eNDPOINT",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "wSDL",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "uSERNAME",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "pASSWORD",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tIMEOUT",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20191217105853",
+    "entityTableName": "webservice",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}
