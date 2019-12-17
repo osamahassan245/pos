@@ -1,0 +1,59 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="wEBSERVICE">
+            <h2><span>WEBSERVICE</span> {{wEBSERVICE.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>G ID</span></dt>
+                <dd>
+                    <span>{{wEBSERVICE.gID}}</span>
+                </dd>
+                <dt><span>C PT</span></dt>
+                <dd>
+                    <span>{{wEBSERVICE.cPT}}</span>
+                </dd>
+                <dt><span>W SNAM</span></dt>
+                <dd>
+                    <span>{{wEBSERVICE.wSNAM}}</span>
+                </dd>
+                <dt><span>D ESCRIPTION</span></dt>
+                <dd>
+                    <span>{{wEBSERVICE.dESCRIPTION}}</span>
+                </dd>
+                <dt><span>E NDPOINT</span></dt>
+                <dd>
+                    <span>{{wEBSERVICE.eNDPOINT}}</span>
+                </dd>
+                <dt><span>W SDL</span></dt>
+                <dd>
+                    <span>{{wEBSERVICE.wSDL}}</span>
+                </dd>
+                <dt><span>U SERNAME</span></dt>
+                <dd>
+                    <span>{{wEBSERVICE.uSERNAME}}</span>
+                </dd>
+                <dt><span>P ASSWORD</span></dt>
+                <dd>
+                    <span>{{wEBSERVICE.pASSWORD}}</span>
+                </dd>
+                <dt><span>T IMEOUT</span></dt>
+                <dd>
+                    <span>{{wEBSERVICE.tIMEOUT}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/webservice', wEBSERVICE.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

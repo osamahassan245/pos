@@ -1,0 +1,71 @@
+<div>
+    <h2 id="page-heading">
+        <span>WEBSERVICES</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-webservice" [routerLink]="['/webservice/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span >
+            Create a new WEBSERVICE
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="wEBSERVICES?.length === 0">
+        <span>No wEBSERVICES found</span>
+    </div>
+    <div class="table-responsive" *ngIf="wEBSERVICES?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr>
+            <th scope="col" ><span>ID</span></th>
+            <th scope="col" ><span>G ID</span></th>
+            <th scope="col" ><span>C PT</span></th>
+            <th scope="col" ><span>W SNAM</span></th>
+            <th scope="col" ><span>D ESCRIPTION</span></th>
+            <th scope="col" ><span>E NDPOINT</span></th>
+            <th scope="col" ><span>W SDL</span></th>
+            <th scope="col" ><span>U SERNAME</span></th>
+            <th scope="col" ><span>P ASSWORD</span></th>
+            <th scope="col" ><span>T IMEOUT</span></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let wEBSERVICE of wEBSERVICES ;trackBy: trackId">
+                <td><a [routerLink]="['/webservice', wEBSERVICE.id, 'view' ]">{{wEBSERVICE.id}}</a></td>
+                <td>{{wEBSERVICE.gID}}</td>
+                <td>{{wEBSERVICE.cPT}}</td>
+                <td>{{wEBSERVICE.wSNAM}}</td>
+                <td>{{wEBSERVICE.dESCRIPTION}}</td>
+                <td>{{wEBSERVICE.eNDPOINT}}</td>
+                <td>{{wEBSERVICE.wSDL}}</td>
+                <td>{{wEBSERVICE.uSERNAME}}</td>
+                <td>{{wEBSERVICE.pASSWORD}}</td>
+                <td>{{wEBSERVICE.tIMEOUT}}</td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/webservice', wEBSERVICE.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/webservice', wEBSERVICE.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline">Edit</span>
+                        </button>
+                        <button type="submit" (click)="delete(wEBSERVICE)"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

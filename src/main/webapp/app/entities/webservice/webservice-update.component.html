@@ -1,0 +1,69 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-webservice-heading">Create or edit a WEBSERVICE</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_gID">G ID</label>
+                    <input type="number" class="form-control" name="gID" id="field_gID"
+                           formControlName="gID"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_cPT">C PT</label>
+                    <input type="text" class="form-control" name="cPT" id="field_cPT"
+                           formControlName="cPT"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_wSNAM">W SNAM</label>
+                    <input type="text" class="form-control" name="wSNAM" id="field_wSNAM"
+                           formControlName="wSNAM"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_dESCRIPTION">D ESCRIPTION</label>
+                    <input type="text" class="form-control" name="dESCRIPTION" id="field_dESCRIPTION"
+                           formControlName="dESCRIPTION"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_eNDPOINT">E NDPOINT</label>
+                    <input type="text" class="form-control" name="eNDPOINT" id="field_eNDPOINT"
+                           formControlName="eNDPOINT"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_wSDL">W SDL</label>
+                    <input type="text" class="form-control" name="wSDL" id="field_wSDL"
+                           formControlName="wSDL"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_uSERNAME">U SERNAME</label>
+                    <input type="text" class="form-control" name="uSERNAME" id="field_uSERNAME"
+                           formControlName="uSERNAME"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_pASSWORD">P ASSWORD</label>
+                    <input type="text" class="form-control" name="pASSWORD" id="field_pASSWORD"
+                           formControlName="pASSWORD"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_tIMEOUT">T IMEOUT</label>
+                    <input type="text" class="form-control" name="tIMEOUT" id="field_tIMEOUT"
+                           formControlName="tIMEOUT"/>
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
